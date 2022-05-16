@@ -1,0 +1,61 @@
+﻿<Window x:Class="_3._8SvoystvaElements.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_3._8SvoystvaElements"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.8*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Button Content="Кнопка" Width="5cm" Height="0.4in" />
+            <!--В WPF можно использовать несколько единиц измерения: сантиметры (cm), точки (pt), дюймы (in) и пиксели (px).-->
+        </Grid>
+
+        <Grid Grid.Row="1"><!--Горизонтальная ориентация
+            Свойство HorizontalAlignment выравнивает элемент по горизонтали 
+            относительно правой или левой стороны контейнера и соответственно 
+            может принимать значения Left, Right, Center (положение по центру), 
+            Stretch (растяжение по всей ширине)-->
+            <Button Content="Left" Width="60" Height="30" HorizontalAlignment="Left" />
+            <Button Content="Center" Width="60" Height="30" HorizontalAlignment="Center" />
+            <Button Content="Right" Width="60" Height="30" HorizontalAlignment="Right" />
+            <Button Content="Stretch" Height="30" HorizontalAlignment="Stretch" Margin="10 -80 10 0" />
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <!--задать для элемента выравнивание по вертикали с помощью свойства VerticalAlignment-->
+            <Button Content="Bottom" Width="60" Height="30" VerticalAlignment="Bottom" />
+            <Button Content="Center" Width="60" Height="30" VerticalAlignment="Center" />
+            <Button Content="Top" Width="60" Height="30" VerticalAlignment="Top" />
+            <Button Content="Stretch" Width="60" VerticalAlignment="Stretch" Margin="150 10 0 10" />
+         </Grid>
+
+        <Grid Grid.Row="3">
+            <!--Свойство Margin устанавливает отступы вокруг элемента. 
+            Синтаксис: Margin="левый_отступ верхний_отступ правый_отступ нижний_отступ"-->
+            <Button Content="15 10 0 0" Width="60" Height="30" Margin ="15 10 0 0"
+                        HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Button Content="0 0 20 10" Width="60" Height="30" Margin ="0 0 20 10"
+                    HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <!--По умолчанию для всех создаваемых элементов Panel.ZIndex="0". 
+            Однако назначив данному свойству более высокое значение, 
+            мы можем передвинуть его на передний план. 
+            Элементы с большим значением этого свойства будут перекрывать те элементы, 
+            у которых меньшее значение этого свойства-->
+            <Button Width="60" Height="30" Panel.ZIndex="2" Margin="5 5 0 0">Один</Button>
+            <Button Width="60" Height="30" Panel.ZIndex="1" Margin="100 25 0 0">Два</Button>
+            <Button Width="60" Height="30" Panel.ZIndex="0" Margin="205 45 0 0">Три</Button>
+        </Grid>
+    </Grid>
+</Window>
